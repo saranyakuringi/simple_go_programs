@@ -10,10 +10,12 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// define structure
 type String_type struct {
 	Word string `json:"word"`
 }
 
+// Function to check palindrome
 func Palindrome(name string) bool {
 	//name = "kayak"
 	var data bool
@@ -31,6 +33,7 @@ func Palindrome(name string) bool {
 	return data
 }
 
+// function to read data from postman and display the output
 func GET_Palindrome(c *gin.Context) {
 	request, err := io.ReadAll(c.Request.Body)
 	if err != nil {
